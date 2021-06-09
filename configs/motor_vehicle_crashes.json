@@ -1,0 +1,52 @@
+{
+  "hash_function": "murmur3",
+  "hashed_properties": [
+    "Contributing Factor 1 Description"
+  ],
+  "data_format": {
+    "type": "csv",
+    "params": {
+      "has_headers": true,
+      "first_data_line_number": 1
+    }
+  },
+  "data_source": {
+    "type": "web",
+    "params": {
+      "request_uri": "https://data.ny.gov/api/views/xe9x-a24f/rows.csv",
+      "request_method": "GET",
+      "request_body": "",
+      "request_headers": {}
+    }
+  },
+  "queries": [
+    {
+      "type": "point_query",
+      "params": {
+        "item": "Animal's Action"
+      }
+    },
+    {
+      "type": "point_query",
+      "params": {
+        "item": "Unsafe Lane Changing"
+      }
+    },
+    {
+      "type": "k_maximum_query",
+      "params": {
+        "k": 5
+      }
+    },
+    {
+      "type": "k_minimum_query",
+      "params": {
+        "k": 5
+      }
+    },
+    {
+      "type": "range_query",
+      "params": {}
+    }
+  ]
+}

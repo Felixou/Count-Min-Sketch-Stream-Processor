@@ -1,0 +1,41 @@
+{
+  "hash_function": "murmur3",
+  "hashed_properties": [
+    "Gender",
+    "Race"
+  ],
+  "data_format": {
+    "type": "csv",
+    "params": {
+      "has_headers": true,
+      "first_data_line_number": 1
+    }
+  },
+  "data_source": {
+    "type": "web",
+    "params": {
+      "request_uri": "https://data.cdc.gov/api/views/wsas-xwh5/rows.csv",
+      "request_method": "GET",
+      "request_body": "",
+      "request_headers": {}
+    }
+  },
+  "queries": [
+    {
+      "type": "k_maximum_query",
+      "params": {
+        "k": 5
+      }
+    },
+    {
+      "type": "k_minimum_query",
+      "params": {
+        "k": 7
+      }
+    },
+    {
+      "type": "range_query",
+      "params": {}
+    }
+  ]
+}

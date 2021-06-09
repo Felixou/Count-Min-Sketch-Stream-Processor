@@ -1,0 +1,40 @@
+{
+  "hash_function": "murmur3",
+  "hashed_properties": [
+    "request"
+  ],
+  "data_format": {
+    "type": "common_log",
+    "params": {}
+  },
+  "data_source": {
+    "type": "file",
+    "params": {
+      "data_file": "data/wc_day6_1.log"
+    }
+  },
+  "queries": [
+    {
+      "type": "point_query",
+      "params": {
+        "item": "GET /english/index.html HTTP/1.0"
+      }
+    },
+    {
+      "type": "k_maximum_query",
+      "params": {
+        "k": 5
+      }
+    },
+    {
+      "type": "k_minimum_query",
+      "params": {
+        "k": 5
+      }
+    },
+    {
+      "type": "range_query",
+      "params": {}
+    }
+  ]
+}
